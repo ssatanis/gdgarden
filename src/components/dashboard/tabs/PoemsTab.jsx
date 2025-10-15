@@ -171,9 +171,6 @@ const PoemsTab = () => {
         <h2 className="text-3xl font-playfair text-gabby-purple mb-2">
           💜 Sahaj's Poems for Gabby 💜
         </h2>
-        <p className="text-gabby-purple/80 font-inter">
-          {calculateTimeSince()} since you met Sahaj
-        </p>
         <p className="text-gabby-text/70 text-sm font-inter mt-2">
           {poems.length} beautiful poems • Click a flower to read
         </p>
