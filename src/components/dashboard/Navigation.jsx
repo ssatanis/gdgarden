@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Home, BookOpen, Mail, Settings, Flower2 } from 'lucide-react';
+import { Home, BookOpen, Mail, Settings } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { getAvatarIcon } from '../AvatarIcons';
 
 /**
  * Navigation Component - Gabby's Garden
@@ -61,7 +62,7 @@ const Navigation = ({ user, activeTab, onTabChange }) => {
                 whileHover={{ scale: 1.1, rotate: 10 }}
                 transition={{ type: 'spring' }}
               >
-                <Flower2 className="w-12 h-12 text-gabby-purple" />
+                {getAvatarIcon(user.avatar, 'w-12 h-12')}
               </motion.div>
               <div>
                 <p className="text-gabby-purple font-dancing text-xl">
@@ -122,7 +123,7 @@ const Navigation = ({ user, activeTab, onTabChange }) => {
             <motion.div
               whileTap={{ scale: 0.9 }}
             >
-              <Flower2 className="w-10 h-10 text-gabby-purple" />
+              {getAvatarIcon(user.avatar, 'w-10 h-10')}
             </motion.div>
             <div>
               <p className="text-gabby-purple font-dancing text-lg">

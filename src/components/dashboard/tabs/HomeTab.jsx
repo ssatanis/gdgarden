@@ -59,6 +59,18 @@ const HomeTab = ({ user, onTabChange }) => {
     { id: 'grateful', emoji: '🙏', label: 'Grateful' },
   ];
 
+  const getMoodResponse = (moodId) => {
+    const responses = {
+      happy: "Your happiness makes my heart dance! Keep shining bright, beautiful Gabby ✨",
+      energized: "That energy is contagious! I can feel your excitement from here 💫",
+      peaceful: "Your calm spirit brings such peace to my world. You're my anchor 🌸",
+      thoughtful: "Your thoughtful mind is one of the things I love most about you 💭",
+      tired: "Rest well, sweet Gabby. You deserve all the peaceful sleep 💤",
+      grateful: "Your gratitude reminds me how lucky I am to know someone as wonderful as you 🙏"
+    };
+    return responses[moodId] || "Thank you for sharing how you feel 💜";
+  };
+
   useEffect(() => {
     // Determine season
     const month = new Date().getMonth();
@@ -152,7 +164,7 @@ const HomeTab = ({ user, onTabChange }) => {
             className="glass-card p-6 rounded-2xl bg-gradient-to-br from-gabby-purple/10 to-gabby-light/10"
           >
             <p className="text-gabby-text font-dancing text-xl text-center">
-              Thank you for sharing! Remember that Sahaj loves you no matter how you feel 💜
+              {getMoodResponse(selectedMood)}
             </p>
           </motion.div>
         )}
@@ -206,20 +218,6 @@ const HomeTab = ({ user, onTabChange }) => {
         </div>
       </motion.div>
 
-      {/* Sweet Message */}
-      <motion.div
-        className="glass-card p-8 rounded-3xl text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <p className="text-xl font-dancing text-gabby-purple">
-          "You are loved more than you know 💜"
-        </p>
-        <p className="text-sm font-inter text-gabby-text/60 mt-2">
-          - Sahaj
-        </p>
-      </motion.div>
     </div>
   );
 };

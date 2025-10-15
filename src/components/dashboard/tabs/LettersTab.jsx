@@ -224,32 +224,6 @@ const LettersTab = () => {
             i will remember you. i will miss you. and i hope you do the same for me, too. 🥰
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.1 }}
-            className="space-y-3 pt-6 border-t border-gabby-purple/30"
-          >
-            <p className="text-gabby-purple">also gabby, i wanted to say <strong>sorry</strong></p>
-            
-            <p>sorry for all the times i have hurt you or made bad jokes or made you feel uncomfortable</p>
-            
-            <p>i tried my best to take things slow and truly understand what makes you the happiest</p>
-            
-            <p>most importantly, i wanted to say sorry that we couldn't take things further</p>
-            
-            <p>it hurts me a lot that we can't, but that is our fate and i wanted to apologize for that bc it is all on my behalf</p>
-            
-            <p className="text-red-400">so, i am truly sorry for that</p>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.2 }}
-          >
-            i also wanted to say thank you for loving me so much gabby! it means a lot! especially for loving me through all of my flaws (which there are many of) i love you so much for that! 😊
-          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, x: -20 }}
