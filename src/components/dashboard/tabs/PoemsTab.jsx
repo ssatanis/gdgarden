@@ -99,6 +99,12 @@ const poems = [
     title: "Ithaca Sky",
     content: "'tis the slope we climb, beneath ithaca's sky,\nstargazing in silence, just you and i.\n'tis your hand in mine, so warm, held tight,\ni never would let go on a night like tonight\n\nithaca sky bc stars are more visible and i wanna see your imagination with what the clouds and stars create while we gaze\noohhh and we see a shooting star!! 🌠",
     emoji: "🤝👫🌌"
+  },
+  {
+    id: 17,
+    title: "NYC Winter",
+    content: "late night facetime just us two\nlaughing soft like we always do\nyour smile warm on my screen\nfeels so real even in between\n\nwinter in nyc hand in hand\nrockefeller skating across the land\nrushing for the subway train\nyou look at me and i feel the same",
+    emoji: "❄️⛸️"
   }
 ];
 
