@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Home, BookOpen, Mail, Settings } from 'lucide-react';
+import { Home, BookOpen, Mail, Crown, Settings } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { getAvatarIcon } from '../AvatarIcons';
 
@@ -42,6 +42,7 @@ const Navigation = ({ user, activeTab, onTabChange }) => {
     { id: 'home', icon: Home, label: 'Home' },
     { id: 'poems', icon: BookOpen, label: 'Poems' },
     { id: 'letters', icon: Mail, label: 'Letters' },
+    { id: 'princess', icon: Crown, label: 'Princess 👑' },
     { id: 'settings', icon: Settings, label: 'Settings' },
   ];
 

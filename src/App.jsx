@@ -74,7 +74,12 @@ function App() {
           {!isAuthenticated ? (
             <PasswordLogin key="login" onLogin={handleLogin} />
           ) : (
-            <Dashboard key="dashboard" user={user} onUserUpdate={handleUserUpdate} />
+            <Dashboard 
+              key="dashboard" 
+              user={user} 
+              onUserUpdate={handleUserUpdate}
+              wonderlandAudioRef={audioRef}
+            />
           )}
         </AnimatePresence>
       </div>

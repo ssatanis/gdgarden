@@ -4,19 +4,21 @@ import Navigation from './Navigation';
 import HomeTab from './tabs/HomeTab';
 import PoemsTab from './tabs/PoemsTab';
 import LettersTab from './tabs/LettersTab';
+import PrincessTab from './tabs/PrincessTab';
 import SettingsTab from './tabs/SettingsTab';
 
 /**
  * Dashboard Component - Gabby's Garden
  * Main application interface with tabbed navigation
  */
-const Dashboard = ({ user, onUserUpdate }) => {
+const Dashboard = ({ user, onUserUpdate, wonderlandAudioRef }) => {
   const [activeTab, setActiveTab] = useState('home');
 
   const tabs = {
     home: <HomeTab user={user} onTabChange={setActiveTab} />,
     poems: <PoemsTab user={user} />,
     letters: <LettersTab user={user} />,
+    princess: <PrincessTab user={user} wonderlandAudioRef={wonderlandAudioRef} />,
     settings: <SettingsTab user={user} onUserUpdate={onUserUpdate} />,
   };
 
