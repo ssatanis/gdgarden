@@ -6,10 +6,6 @@ import Dashboard from './components/dashboard/Dashboard';
 import { ToastProvider } from './components/Toast';
 import { saveToStorage, loadFromStorage, STORAGE_KEYS } from './utils/storage';
 
-/**
- * Main App Component - Gabby's Garden
- * Password protected garden for Gabby
- */
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -17,7 +13,6 @@ function App() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Always require password - no auto-login
     setIsLoading(false);
   }, []);
 
@@ -25,11 +20,10 @@ function App() {
     setIsAuthenticated(true);
     saveToStorage(STORAGE_KEYS.authenticated, true);
     
-    // Auto-set Gabby as user
     const gabbyUser = {
       name: 'Gabby',
       avatar: 'snoopy',
-      createdAt: '2025-05-11T00:00:00.000Z', // Met Sahaj date
+      createdAt: '2025-05-11T00:00:00.000Z',
       preferences: {
         activities: ['ice skating', 'drawing', 'fishing', 'history'],
         weather: 'sunny',
@@ -39,7 +33,6 @@ function App() {
     setUser(gabbyUser);
     saveToStorage(STORAGE_KEYS.user, gabbyUser);
 
-    // Play wonderland.mp3
     if (audioRef.current) {
       audioRef.current.play().catch(err => console.log('Audio play failed:', err));
     }
@@ -52,8 +45,8 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gabby-purple text-2xl font-playfair">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="text-slate-800 text-xl font-inter">
           Loading...
         </div>
       </div>
@@ -63,13 +56,10 @@ function App() {
   return (
     <ToastProvider>
       <div className="min-h-screen relative">
-        {/* Background Animation */}
-        <BackgroundAnimation />
+        {isAuthenticated && <BackgroundAnimation />}
 
-        {/* Audio element for wonderland.mp3 */}
         <audio ref={audioRef} src="/wonderland.mp3" loop />
 
-        {/* Main Content */}
         <AnimatePresence mode="wait">
           {!isAuthenticated ? (
             <PasswordLogin key="login" onLogin={handleLogin} />
