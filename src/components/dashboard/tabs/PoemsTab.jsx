@@ -105,6 +105,12 @@ const poems = [
     title: "NYC Winter",
     content: "late night facetime just us two\nlaughing soft like we always do\nyour smile warm on my screen\nfeels so real even in between\n\nwinter in nyc hand in hand\nrockefeller skating across the land\nrushing for the subway train\nyou look at me and i feel the same",
     emoji: "❄️⛸️"
+  },
+  {
+    id: 18,
+    title: "Thanksgiving Break",
+    content: "meeting you that break felt new and right\nyour painting and letter made my whole night\nsleeping close at your place felt warm and true\ncuddled up safe with nothing to do\n\nthough you were grounded, as my family talked on thanksgiving day,\nyou stayed in my thoughts in the softest way\n\nour Roblox time at Redefined felt calm and bright\nthen snoopy strolls and christmas lights at night\nflatbread at Chez Fabien, holding each other tight\na few sweet kissies to end the night right\n\nwe bonded well with your family, too\nhotpot shared and a long hug near my car\na soft farewell before our paths divide\ntill winter break brings you back by my side",
+    emoji: "🦃🍂"
   }
 ];
 
