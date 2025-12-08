@@ -23,7 +23,7 @@ function App() {
     const gabbyUser = {
       name: 'Gabby',
       avatar: 'snoopy',
-      createdAt: '2025-05-11T00:00:00.000Z',
+      createdAt: '2025-05-10T00:00:00.000Z',
       preferences: {
         activities: ['ice skating', 'drawing', 'fishing', 'history'],
         weather: 'sunny',

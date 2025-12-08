@@ -32,7 +32,7 @@ const SettingsTab = ({ user, onUserUpdate }) => {
           </div>
 
           <p className="text-gabby-purple text-sm font-inter font-semibold">
-            With Sahaj since May 11, 2025 💜
+            With Sahaj since May 10, 2025 💜
           </p>
         </div>
       </motion.div>

@@ -17,21 +17,36 @@ const Navigation = ({ user, activeTab, onTabChange }) => {
     else if (hour < 18) setGreeting('Good afternoon');
     else setGreeting('Good evening');
 
-    // Calculate time since May 11, 2025
+    // Calculate time since May 10, 2025
     const calculateTimeSince = () => {
-      const startDate = new Date('2025-05-11');
+      const startDate = new Date('2025-05-10');
       const now = new Date();
-      const diffTime = Math.abs(now - startDate);
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      const diffMonths = Math.floor(diffDays / 30);
-      const remainingDays = diffDays % 30;
       
-      if (diffMonths >= 12) {
-        const years = Math.floor(diffMonths / 12);
-        const months = diffMonths % 12;
-        return `${years} year${years > 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${remainingDays} day${remainingDays !== 1 ? 's' : ''}`;
+      // Calculate years, months, and days using actual calendar months
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      let days = now.getDate() - startDate.getDate();
+      
+      // Adjust for negative days
+      if (days < 0) {
+        months--;
+        // Get days in the previous month
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      
+      // Adjust for negative months
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      
+      if (years > 0) {
+        return `${years} year${years > 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''}`;
+      } else if (months > 0) {
+        return `${months} month${months !== 1 ? 's' : ''} and ${days} day${days !== 1 ? 's' : ''}`;
       } else {
-        return `${diffMonths} month${diffMonths !== 1 ? 's' : ''} and ${remainingDays} day${remainingDays !== 1 ? 's' : ''}`;
+        return `${days} day${days !== 1 ? 's' : ''}`;
       }
     };
 
