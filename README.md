@@ -4,7 +4,7 @@ A beautiful and personal website created by Sahaj for Gabby, featuring poems, le
 
 ## Features
 - **Password Protected** - Private garden accessible with "peony" or "peonies"
-- **16 Beautiful Poems** - All poems Sahaj wrote for Gabby with interactive flowers
+- **19 Beautiful Poems** - All poems Sahaj wrote for Gabby with interactive flowers
 - **Personal Letters** - Heartfelt letters and hidden secrets to discover
 - **Personalized Dashboard** - Daily greetings and mood check-ins
 - **Memory Tracking** - Time since May 11, 2025 displayed throughout
