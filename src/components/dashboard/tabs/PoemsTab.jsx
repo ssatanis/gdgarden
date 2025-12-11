@@ -123,7 +123,7 @@ const poems = [
     title: "7th Months",
     content: "I know we cannot talk, but happy 7th months, my love.\n\nI am very sorry for the all of the stress and anxiety I have caused, and for all the incorrect rumors you have heard about me. I hope the stress fades away and that your trust within me is strengthened.\n\nI cannot wait to talk to you soon!\n\n-December 10, 2025",
     emoji: "💜"
-  }
+  },
 ];
 
 const PoemsTab = () => {
