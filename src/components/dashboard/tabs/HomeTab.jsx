@@ -187,7 +187,7 @@ const HomeTab = ({ user, onTabChange }) => {
               View Poems
             </h3>
             <p className="text-gabby-text/70 font-inter">
-              Read all 19 beautiful poems Sahaj wrote for you 💜
+              Read all 20 beautiful poems Sahaj wrote for you 💜
             </p>
           </div>
           <Sparkles className="w-12 h-12 text-gabby-purple animate-pulse" />

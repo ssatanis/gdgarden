@@ -115,8 +115,14 @@ const poems = [
   {
     id: 19,
     title: "Finals",
-    content: "studying for finals, still thinking of you (A)\n\ndreaming of winter and skating again (B)\n\nreplaying our summers and breaks like i always do (A)\n\nyou stay on my mind more than paper and pen",
+    content: "studying for finals, still thinking of you \n\ndreaming of winter and skating again\n\nreplaying our summers and breaks like i always do\n\nyou stay on my mind more than paper and pen",
     emoji: "📚"
+  },
+  {
+    id: 20,
+    title: "7th Months",
+    content: "I know we cannot talk, but happy 7th months, my love.\n\nI hope the stress and anxiety I have caused fades away, and your trust within me is strengthened.\n\nI cannot wait to talk to you soon!\n\n-December 10, 2025",
+    emoji: "💜"
   }
 ];
 
