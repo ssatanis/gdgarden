@@ -136,7 +136,17 @@ const PoemsTab = () => {
   useEffect(() => {
     const savedComments = loadFromStorage(STORAGE_KEYS.poemComments, {});
     const savedFavorites = loadFromStorage(STORAGE_KEYS.poemFavorites, []);
-    setComments(savedComments);
+    
+    // Ensure all comments have IDs for backward compatibility
+    const commentsWithIds = {};
+    Object.keys(savedComments).forEach(poemId => {
+      commentsWithIds[poemId] = savedComments[poemId].map((comment, idx) => ({
+        ...comment,
+        id: comment.id || `${poemId}-${idx}-${comment.date}`
+      }));
+    });
+    
+    setComments(commentsWithIds);
     setFavorites(new Set(savedFavorites));
   }, []);
 
@@ -146,7 +156,11 @@ const PoemsTab = () => {
         ...comments,
         [poemId]: [
           ...(comments[poemId] || []),
-          { text: newComment, date: new Date().toISOString() }
+          { 
+            id: Date.now() + Math.random(), // Unique ID for each comment
+            text: newComment, 
+            date: new Date().toISOString() 
+          }
         ]
       };
       setComments(updatedComments);
@@ -313,9 +327,9 @@ const PoemsTab = () => {
 
                 {/* Existing Comments */}
                 <div className="space-y-3 max-h-40 overflow-y-auto">
-                  {comments[selectedPoem.id]?.map((comment, idx) => (
+                  {comments[selectedPoem.id]?.map((comment) => (
                     <motion.div
-                      key={idx}
+                      key={comment.id || comment.date}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       className="glass-card p-3 rounded-xl"
