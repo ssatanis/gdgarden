@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, BookOpen, Mail, Heart } from 'lucide-react';
+import { Sparkles, BookOpen, Mail, Heart, StickyNote } from 'lucide-react';
 
 // Random greetings based on season/day
 const greetings = {
@@ -41,6 +41,15 @@ const greetings = {
     "Lovely weekend! May it be filled with joy and rest 💜",
   ],
 };
+
+// Notes with specific dates
+const notes = [
+  {
+    date: '2024-12-12',
+    displayDate: 'Friday, December 12',
+    content: "Hi Gabby,\nI miss you!\nI took my econ and bio final today, as well as a bio midterm. I still have three more finals ☹️\nExpect something next Friday! 🤗"
+  }
+];
 
 /**
  * HomeTab Component - Gabby's Garden
@@ -168,6 +177,40 @@ const HomeTab = ({ user, onTabChange }) => {
             </p>
           </motion.div>
         )}
+      </motion.div>
+
+      {/* Notes Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+        className="space-y-4"
+      >
+        <h3 className="text-2xl font-playfair text-gabby-purple flex items-center gap-2">
+          <StickyNote className="w-6 h-6" />
+          Notes
+        </h3>
+
+        <div className="space-y-4">
+          {notes.map((note, index) => (
+            <motion.div
+              key={note.date}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 + index * 0.1 }}
+              className="glass-card p-6 rounded-2xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10"
+            >
+              <div className="flex items-start justify-between mb-3">
+                <p className="text-gabby-purple font-playfair text-lg font-semibold">
+                  {note.displayDate}
+                </p>
+              </div>
+              <p className="text-gabby-text font-dancing text-lg leading-relaxed whitespace-pre-line">
+                {note.content}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       {/* View Poems Button */}
