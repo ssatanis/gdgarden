@@ -45,6 +45,11 @@ const greetings = {
 // Notes with specific dates
 const notes = [
   {
+    date: '2024-12-13',
+    displayDate: 'Saturday, December 13',
+    content: "Hiii!!!\nI studied all of US healthcare system today and have my exam tomorrow. I took a practice test and it isn't looking too good. ☹️\nI cried a little thinking about you today Gabs. I felt so bad of how bad of a person I was to you.\nI hope your Econ final went great and hopefully you can sleep on your home bed tonight.\nI miss you so much 🤗\nAnd um I hope you still think about me here and there idk.\nI love you, Gabby."
+  },
+  {
     date: '2024-12-12',
     displayDate: 'Friday, December 12',
     content: "Hi Gabby,\nI miss you!\nI took my econ and bio final today, as well as a bio midterm. I still have three more finals ☹️\nExpect something next Friday! 🤗"
