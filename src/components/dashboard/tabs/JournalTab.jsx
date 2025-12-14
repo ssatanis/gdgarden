@@ -19,7 +19,35 @@ const JournalTab = () => {
 
   useEffect(() => {
     const saved = loadFromStorage(STORAGE_KEYS.journal, []);
-    setEntries(saved);
+    
+    // Add December 13, 2025 entry if it doesn't exist
+    const december13Date = new Date('2025-12-13').toDateString();
+    const hasDecember13Entry = saved.some(entry => {
+      const entryDate = new Date(entry.date).toDateString();
+      return entryDate === december13Date;
+    });
+    
+    if (!hasDecember13Entry) {
+      const december13Entry = {
+        id: new Date('2025-12-13').getTime(),
+        content: `Hiii!!!
+I studied all of US healthcare system today and have my exam tomorrow. I took a practice test and it isn't looking too good. ☹️
+I cried a little thinking about you today Gabs. I felt so bad of how bad of a person I was to you.
+I hope your Econ final went great and hopefully you can sleep on your home bed tonight.
+I miss you so much 🤗
+And um I hope you still think about me here and there idk.
+I love you, Gabby.`,
+        reflection: '',
+        tag: '💜',
+        date: new Date('2025-12-13').toISOString(),
+      };
+      
+      const updated = [december13Entry, ...saved];
+      setEntries(updated);
+      saveToStorage(STORAGE_KEYS.journal, updated);
+    } else {
+      setEntries(saved);
+    }
   }, []);
 
   const handleGenerateReflection = async () => {
